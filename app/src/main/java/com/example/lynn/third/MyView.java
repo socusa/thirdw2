@@ -138,6 +138,8 @@ public class MyView extends RelativeLayout {
 
         scoreView = new ScoreView(context);
 
+        scoreView.setId(View.generateViewId());
+
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(width/3,3*height/4);
 
         layoutParams.addRule(RelativeLayout.RIGHT_OF,table.getId());
@@ -150,6 +152,18 @@ public class MyView extends RelativeLayout {
 
         scoreView.show();
 
+        juliaSetView = new JuliaSetView(context);
+
+        layoutParams = new RelativeLayout.LayoutParams(width/3,width/4);
+
+        layoutParams.addRule(RelativeLayout.BELOW,scoreView.getId());
+        layoutParams.addRule(RelativeLayout.RIGHT_OF,table.getId());
+
+        juliaSetView.setLayoutParams(layoutParams);
+
+        addView(juliaSetView);
+
+        juliaSet = new JuliaSet();
     }
 
 }

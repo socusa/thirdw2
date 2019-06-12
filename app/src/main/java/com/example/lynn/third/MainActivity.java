@@ -1,5 +1,6 @@
 package com.example.lynn.third;
 
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,10 +23,21 @@ public class MainActivity extends AppCompatActivity {
     public static int height;
     public static ScoreView scoreView;
     public static int score;
+    public static Bitmap bitmap;
+    public static JuliaSetView juliaSetView;
+    public static JuliaSet juliaSet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(myView = new MyView(this));
     }
+
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if (juliaSet != null)
+            juliaSet.stop();
+    }
+
 }
