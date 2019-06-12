@@ -25,6 +25,8 @@ public class MyThread implements Runnable {
 
         boolean same = false;
 
+        /*
+
         if (first.getTag().equals(second.getTag()))
             same = true;
         else
@@ -37,6 +39,8 @@ public class MyThread implements Runnable {
                 if (same)
             }
         });
+
+        */
 
     }
 }
