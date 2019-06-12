@@ -108,7 +108,15 @@ public class JuliaSet implements Runnable {
 
             bitmap = Bitmap.createBitmap(pixels,width/3,height/4,Bitmap.Config.RGB_565);
 
-            juliaSetView.invalidate();
+            juliaSetView.post(new Runnable() {
+
+                @Override
+                public void run() {
+                    juliaSetView.invalidate();
+                }
+            });
+
+
         }
     }
 
