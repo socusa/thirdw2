@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
     public static Map<Integer,String> names;
     public static boolean keepGoing;
     public static boolean ready = true;
-
+    public static int width;
+    public static int height;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
