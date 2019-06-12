@@ -5,9 +5,10 @@ import android.support.v4.content.ContextCompat;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import static com.example.lynn.third.MainActivity.*;
+
 public class ScoreView extends LinearLayout {
     private Context context;
-    private int score;
     private int[] digitIds;
 
     public ScoreView(Context context) {
@@ -15,24 +16,16 @@ public class ScoreView extends LinearLayout {
 
         this.context = context;
 
-        this.score = score;
-
         digitIds = new int[]{R.drawable.zero,
-                R.drawable.one,
-                R.drawable.two,
-                R.drawable.three,
-                R.drawable.four,
-                R.drawable.five,
-                R.drawable.six,
-                R.drawable.seven,
-                R.drawable.eight,
-                R.drawable.nine};
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-
-        show();
+                             R.drawable.one,
+                             R.drawable.two,
+                             R.drawable.three,
+                             R.drawable.four,
+                             R.drawable.five,
+                             R.drawable.six,
+                             R.drawable.seven,
+                             R.drawable.eight,
+                             R.drawable.nine};
     }
 
     public void show() {

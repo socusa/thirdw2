@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     public static int width;
     public static int height;
     public static ScoreView scoreView;
+    public static int score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -146,6 +146,8 @@ public class MyView extends RelativeLayout {
 
         addView(scoreView);
 
+        score = -5;
+
     }
 
 }
