@@ -63,11 +63,13 @@ public class JuliaSet implements Runnable {
 
         double infinity = 4;
 
+        /*
+
         for (int m=0;m<height;m++) {
             double x0 = -2 + (m*1.0)/(width/(4*1.0));
 
             for (int n=0;n<width;n++) {
-                double y0 = 2 - (n*1.0)/(400/(4*1.0));
+                double y0 = 2 - (n*1.0)/(width/(4*1.0));
 
                 double q = x0;
                 double f = y0;
@@ -96,7 +98,44 @@ public class JuliaSet implements Runnable {
             }
         }
 
-        return(output);
+        */
+
+        for (int m=0;m<400;m++) {
+            double x0 = -2 + (m * 1.0) / (400 / (4 * 1.0));
+
+            for (int n = 0; n < 400; n++) {
+                double y0 = 2 - (n * 1.0) / (400 / (4 * 1.0));
+
+                double q = x0;
+                double f = y0;
+                int white = 0;
+
+                for (int i = 0; i < numberOfIterations; i++) {
+                    double x1 = q * q - f * f + creal;
+                    double y1 = 2 * q * f + cimaginary;
+
+                    q = x1;
+                    f = y1;
+
+                    double z = q * q + f * f;
+
+                    if (z > infinity) {
+                        if (i <= 15)
+                            output[n * 400 + m] = colors[i];
+                        else
+                            output[n * 400 + m] = colors[16];
+
+                        white = 1;
+
+                        break;
+                    }
+                }
+            }
+        }
+
+
+            return (output);
+
     }
 
     @Override
