@@ -45,7 +45,7 @@ public class ScoreView extends LinearLayout {
             } else
                 views[counter].setImageDrawable(ContextCompat.getDrawable(context,R.drawable.minus));
 
-            int width = 600/String.valueOf(score).length();
+            int width = MainActivity.width/(3*String.valueOf(score).length());
 
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width,width);
 
