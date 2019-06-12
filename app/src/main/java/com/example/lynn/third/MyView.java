@@ -2,6 +2,7 @@ package com.example.lynn.third;
 
 import android.content.Context;
 import android.graphics.Point;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TableLayout;
@@ -111,6 +112,8 @@ public class MyView extends RelativeLayout {
 
         TableLayout table = new TableLayout(context);
 
+        table.setId(View.generateViewId());
+
         int index = 0;
 
         int widthOfButton = Math.min(width/9,height/9);
@@ -132,6 +135,16 @@ public class MyView extends RelativeLayout {
         }
 
         addView(table);
+
+        scoreView = new ScoreView(context);
+
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(width/3,3*height/4);
+
+        layoutParams.addRule(RelativeLayout.RIGHT_OF,table.getId());
+
+        scoreView.setLayoutParams(layoutParams);
+
+        addView(scoreView);
 
     }
 

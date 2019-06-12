@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     public static boolean ready = true;
     public static int width;
     public static int height;
+    public static ScoreView scoreView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
