@@ -3,6 +3,8 @@ package com.example.lynn.third;
 import android.content.Context;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 
 import java.util.HashMap;
 
@@ -89,6 +91,39 @@ public class MyView extends RelativeLayout {
 
         x = getResources().getDrawable(R.drawable.x);
 
+        images = new ImageView[36];
+
+        for(int counter=0;counter<images.length;counter++) {
+            images[counter] = new ImageView(context);
+
+            images[counter].setTag(String.valueOf(drawables[counter]));
+
+            images[counter].setImageDrawable(x);
+
+            images[counter].setOnClickListener(listener);
+        }
+
+        TableLayout table = new TableLayout(context);
+
+        int index = 0;
+
+        for (int counter=0;counter<6;counter++) {
+            TableRow row = new TableRow(context);
+
+            for (int counter1=0;counter1<6;counter1++) {
+                row.addView(images[index]);
+
+                TableRow.LayoutParams params = new TableRow.LayoutParams(160,160);
+
+                images[index].setLayoutParams(params);
+
+                index++;
+            }
+
+            table.addView(row);
+        }
+
+        addView(table);
 
     }
 

@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     public static ImageView second;
     public static Map<Integer,String> names;
     public static boolean keepGoing;
+    public static boolean ready = true;
 
 
     @Override
