@@ -49,13 +49,12 @@ public class JuliaSet implements Runnable {
     public int[] getMap(double creal,
                         double cimaginary,
                         int width,
-                        int height,
                         int[] colors) {
-        int[] output = new int[width*height];
+        int[] output = new int[width*width];
 
-        for (int counter=0;counter<height;counter++) {
+        for (int counter=0;counter<width;counter++) {
             for (int counter1=1;counter1<width;counter1++) {
-                output[counter1*height + counter] = colors[0];
+                output[counter1*width + counter] = colors[0];
             }
         }
 
@@ -63,9 +62,7 @@ public class JuliaSet implements Runnable {
 
         double infinity = 4;
 
-        /*
-
-        for (int m=0;m<height;m++) {
+        for (int m=0;m<width;m++) {
             double x0 = -2 + (m*1.0)/(width/(4*1.0));
 
             for (int n=0;n<width;n++) {
@@ -86,9 +83,9 @@ public class JuliaSet implements Runnable {
 
                     if (z > infinity) {
                         if (i <= 15)
-                            output[n*height + m] = colors[i];
+                            output[n*width + m] = colors[i];
                         else
-                            output[n*height + m] = colors[16];
+                            output[n*width + m] = colors[16];
 
                         white = 1;
 
@@ -98,7 +95,7 @@ public class JuliaSet implements Runnable {
             }
         }
 
-        */
+        /*
 
         for (int m=0;m<400;m++) {
             double x0 = -2 + (m * 1.0) / (400 / (4 * 1.0));
@@ -133,6 +130,8 @@ public class JuliaSet implements Runnable {
             }
         }
 
+        */
+
 
             return (output);
 
@@ -141,15 +140,17 @@ public class JuliaSet implements Runnable {
     @Override
     public void run() {
         while (keepGoing) {
-            pause(0.1);
+            pause(5);
 
- //           int[] pixels = getMap(0,-0.5,width/3,height/4,colors());
+            int width = Math.min(MainActivity.width/3,height/4);
 
-            int[] pixels = getMap(0,-0.5,400,400,colors());
+            int[] pixels = getMap(0,-0.5,width,colors());
 
-//            bitmap = Bitmap.createBitmap(pixels,width/3,height/4,Bitmap.Config.RGB_565);
+ //           int[] pixels = getMap(0,-0.5,400,400,colors());
 
-            bitmap = Bitmap.createBitmap(pixels,400,400,Bitmap.Config.RGB_565);
+            bitmap = Bitmap.createBitmap(pixels,width,width,Bitmap.Config.RGB_565);
+
+//            bitmap = Bitmap.createBitmap(pixels,400,400,Bitmap.Config.RGB_565);
 
             juliaSetView.post(new Runnable() {
 
