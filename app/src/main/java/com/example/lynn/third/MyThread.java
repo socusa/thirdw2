@@ -34,10 +34,16 @@ public class MyThread implements Runnable {
                 if (same) {
                     first.setVisibility(View.INVISIBLE);
                     second.setVisibility(View.INVISIBLE);
+
+                    score += 5;
                 } else {
                     first.setImageDrawable(x);
                     second.setImageDrawable(x);
+
+                    score -= 1000;
                 }
+
+                scoreView.show();
 
                 first = null;
 
