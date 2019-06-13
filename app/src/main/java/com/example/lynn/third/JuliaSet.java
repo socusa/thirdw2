@@ -147,7 +147,9 @@ public class JuliaSet implements Runnable {
 
             int[] pixels = getMap(0,-0.5,400,400,colors());
 
-            bitmap = Bitmap.createBitmap(pixels,width/3,height/4,Bitmap.Config.RGB_565);
+//            bitmap = Bitmap.createBitmap(pixels,width/3,height/4,Bitmap.Config.RGB_565);
+
+            bitmap = Bitmap.createBitmap(pixels,400,400,Bitmap.Config.RGB_565);
 
             juliaSetView.post(new Runnable() {
 
