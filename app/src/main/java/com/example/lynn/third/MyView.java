@@ -140,7 +140,7 @@ public class MyView extends RelativeLayout {
 
         scoreView.setId(View.generateViewId());
 
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(width/3,3*height/4);
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(width/3,height/2);
 
         layoutParams.addRule(RelativeLayout.RIGHT_OF,table.getId());
 
@@ -154,7 +154,7 @@ public class MyView extends RelativeLayout {
 
         juliaSetView = new JuliaSetView(context);
 
-        layoutParams = new RelativeLayout.LayoutParams(width/3,width/4);
+        layoutParams = new RelativeLayout.LayoutParams(width/3,height/2);
 
         layoutParams.addRule(RelativeLayout.BELOW,scoreView.getId());
         layoutParams.addRule(RelativeLayout.RIGHT_OF,table.getId());
