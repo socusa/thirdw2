@@ -14,7 +14,7 @@ public class JuliaSetView extends View {
 
     public void onDraw(Canvas canvas) {
         if (bitmap != null)
-           canvas.drawBitmap(bitmap,100,0,null);
+           canvas.drawBitmap(bitmap,0,0,null);
     }
 
 }
