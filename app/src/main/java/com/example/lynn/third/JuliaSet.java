@@ -143,7 +143,9 @@ public class JuliaSet implements Runnable {
         while (keepGoing) {
             pause(0.1);
 
-            int[] pixels = getMap(0,-0.5,width/3,height/4,colors());
+ //           int[] pixels = getMap(0,-0.5,width/3,height/4,colors());
+
+            int[] pixels = getMap(0,-0.5,400,400,colors());
 
             bitmap = Bitmap.createBitmap(pixels,width/3,height/4,Bitmap.Config.RGB_565);
 
